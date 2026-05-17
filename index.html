@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="陳浩宇｜機器視覺工程師｜GitHub 儲存庫建立教學">
+    <title>建立 GitHub 儲存庫 | 陳浩宇 機器視覺工程師</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --accent: #22d3ee;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .navbar {
+            background: rgba(10, 10, 26, 0.95);
+            backdrop-filter: blur(16px);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+        }
+        
+        .neon-text {
+            text-shadow: 
+                0 0 10px var(--accent),
+                0 0 20px var(--accent),
+                0 0 40px var(--accent);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 64px;
+            height: 3px;
+            background: linear-gradient(to right, #22d3ee, #0ea5e9);
+        }
+        
+        .glass {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-[#0a0a1a] text-white overflow-x-hidden">
+
+    <!-- 導航列（Navbar） -->
+    <nav class="navbar fixed top-0 left-0 right-0 z-50 border-b border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-cyan-400 rounded-2xl flex items-center justify-center text-[#0a0a1a] font-bold text-2xl rotate-12">👁️</div>
+                <div>
+                    <span class="heading-font text-3xl font-semibold tracking-tighter">陳浩宇</span>
+                    <span class="text-cyan-400 text-sm font-medium tracking-[2px] block -mt-1">MACHINE VISION ENGINEER</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10 text-lg font-medium">
+                <a href="#step1" onclick="smoothScrollTo('step1')" class="hover:text-cyan-400">Step 1 建立儲存庫</a>
+                <a href="#step2" onclick="smoothScrollTo('step2')" class="hover:text-cyan-400">Step 2 上傳檔案</a>
+                <a href="#finish" onclick="smoothScrollTo('finish')" class="hover:text-cyan-400">完成後</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/new" target="_blank"
+                   class="px-6 py-2.5 bg-white text-[#0a0a1a] hover:bg-cyan-400 hover:text-[#0a0a1a] rounded-2xl font-semibold flex items-center gap-2">
+                    <i class="fab fa-github"></i>
+                    <span>立即建立 GitHub</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 區塊 -->
+    <section class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 px-5 py-2 bg-cyan-400/10 rounded-3xl text-cyan-400 text-sm font-medium tracking-widest backdrop-blur-md">
+                    <i class="fab fa-github"></i>
+                    GitHub 建立教學
+                </div>
+                
+                <h1 class="heading-font text-7xl md:text-8xl font-semibold leading-none neon-text">
+                    好的！<br>GitHub 上還沒有<br><span class="text-cyan-400">my-vision-portfolio</span>
+                </h1>
+                
+                <p class="text-2xl text-gray-300 max-w-lg">
+                    沒關係，我們現在就一步一步建立儲存庫<br>
+                    只需要 3 分鐘，之後就能直接部署到 Vercel
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#step1" onclick="smoothScrollTo('step1')"
+                       class="px-10 py-5 bg-cyan-400 hover:bg-white hover:text-[#0a0a1a] text-[#0a0a1a] rounded-3xl text-xl font-semibold flex items-center gap-3">
+                        <span>開始建立儲存庫</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative flex justify-center">
+                <div class="text-center">
+                    <div class="inline-block bg-gradient-to-br from-cyan-400 to-blue-500 p-1 rounded-3xl">
+                        <div class="bg-[#0a0a1a] rounded-3xl px-12 py-8 text-center">
+                            <div class="text-6xl mb-4">📦</div>
+                            <div class="font-mono text-4xl text-cyan-400">my-vision-portfolio</div>
+                            <div class="text-emerald-400 mt-6">即將建立完成</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 1 -->
+    <section id="step1" class="max-w-screen-2xl mx-auto px-8 py-24">
+        <h2 class="section-title text-5xl heading-font font-semibold mb-16 text-center">Step 1：建立 GitHub 儲存庫</h2>
+        
+        <div class="max-w-4xl mx-auto glass p-12 rounded-3xl">
+            <ol class="space-y-12 text-xl">
+                <li class="flex gap-8">
+                    <div class="shrink-0 w-10 h-10 bg-cyan-400 text-black rounded-2xl flex items-center justify-center text-3xl font-bold">1</div>
+                    <div class="flex-1">
+                        <h3 class="font-semibold mb-2">打開 GitHub</h3>
+                        <a href="https://github.com/new" target="_blank" class="text-cyan-400 underline text-2xl">點此直接前往「New repository」頁面 →</a>
+                    </div>
+                </li>
+                <li class="flex gap-8">
+                    <div class="shrink-0 w-10 h-10 bg-cyan-400 text-black rounded-2xl flex items-center justify-center text-3xl font-bold">2</div>
+                    <div class="flex-1">
+                        <h3 class="font-semibold mb-2">填寫以下資訊</h3>
+                        <div class="bg-black p-8 rounded-3xl space-y-6 font-mono">
+                            <div><strong>Repository name</strong>：my-vision-portfolio</div>
+                            <div><strong>Description</strong>：陳浩宇機器視覺工程師個人網站（可選）</div>
+                            <div><strong>Visibility</strong>：Public（公開）</div>
+                            <div><strong>Add a README file</strong>：勾選</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="flex gap-8">
+                    <div class="shrink-0 w-10 h-10 bg-cyan-400 text-black rounded-2xl flex items-center justify-center text-3xl font-bold">3</div>
+                    <div class="flex-1">
+                        <h3 class="font-semibold mb-2">點擊綠色按鈕</h3>
+                        <p class="text-emerald-400 text-2xl">Create repository</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Step 2 -->
+    <section id="step2" class="bg-[#111827] py-24">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <h2 class="section-title text-5xl heading-font font-semibold mb-16 text-center">Step 2：上傳你的網站檔案</h2>
+            
+            <div class="max-w-4xl mx-auto glass p-12 rounded-3xl">
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="flex-1">
+                        <h3 class="text-3xl font-semibold mb-6">最簡單拖曳上傳法</h3>
+                        <ol class="space-y-6 text-lg">
+                            <li class="flex gap-4"><span class="text-cyan-400 font-bold">01</span> 在新建立的儲存庫頁面，點擊「Add file」→「Upload files」</li>
+                            <li class="flex gap-4"><span class="text-cyan-400 font-bold">02</span> 打開你的電腦資料夾 <strong>my-vision-portfolio</strong></li>
+                            <li class="flex gap-4"><span class="text-cyan-400 font-bold">03</span> 把裡面的所有檔案（index.html、live-server-guide.html 等）全部拖進網頁視窗</li>
+                            <li class="flex gap-4"><span class="text-cyan-400 font-bold">04</span> 下方 Commit message 填「Initial commit」</li>
+                            <li class="flex gap-4"><span class="text-cyan-400 font-bold">05</span> 點綠色按鈕 <strong>Commit changes</strong></li>
+                        </ol>
+                    </div>
+                    <div class="flex-1 border-l border-white/10 pl-12">
+                        <h3 class="text-3xl font-semibold mb-6">上傳完成後</h3>
+                        <p class="text-xl text-gray-300">刷新頁面，你應該會看到 index.html 出現在 GitHub 上</p>
+                        <div class="mt-12">
+                            <p class="text-emerald-400 text-2xl">把你的 GitHub 儲存庫網址貼給我</p>
+                            <p class="font-mono text-cyan-400 text-xl mt-4">例如：https://github.com/你的帳號/my-vision-portfolio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Finish -->
+    <section id="finish" class="max-w-screen-2xl mx-auto px-8 py-24">
+        <h2 class="section-title text-5xl heading-font font-semibold mb-16 text-center">完成後下一步</h2>
+        <div class="max-w-2xl mx-auto text-center glass p-12 rounded-3xl">
+            <p class="text-3xl text-emerald-400 mb-8">上傳完成後，請把你的 GitHub 儲存庫完整網址貼給我</p>
+            <button onclick="alert('請直接複製你的 GitHub 網址貼在這裡，例如：https://github.com/你的帳號/my-vision-portfolio\n我會立刻確認並帶你去 Vercel 部署！')" 
+                    class="px-12 py-7 bg-emerald-400 text-black rounded-3xl text-2xl font-semibold hover:bg-white">
+                我已建立並上傳完成 → 貼網址給我
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-gray-400 text-sm">
+            <div>© 2026 陳浩宇 All Rights Reserved. 你的個人網站即將公開上線！</div>
+            <div class="flex items-center gap-8">
+                <a href="https://github.com/new" target="_blank" class="hover:text-cyan-400">立即建立 GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function smoothScrollTo(section) {
+            const el = document.getElementById(section);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        console.log('%c📦 GitHub 儲存庫建立教學載入完成 - 準備上傳你的網站！', 'color:#22d3ee; font-family:Space Grotesk; font-size:18px');
+    </script>
+</body>
+</html>
